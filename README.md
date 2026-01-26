@@ -1,7 +1,7 @@
 
 ---
 
-# **Clean Architecture Note App **
+# **Clean Architecture Note App**
 
 A modern, offline-first notes application built with **Jetpack Compose**, focusing on Clean Architecture principles, reactive state management, and a comprehensive automated testing suite.
 
