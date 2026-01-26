@@ -21,6 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.egcoding.notes.core.utils.TestTags
 import com.egcoding.notes.domain.model.Note
 import com.egcoding.notes.presentation.ui.components.TransparentHintTextField
 import kotlinx.coroutines.flow.collectLatest
@@ -70,7 +71,7 @@ fun AddEditNoteScreen(
             ) {
                 Icon(
                     imageVector = Icons.Default.Save,
-                    contentDescription = null
+                    contentDescription = "Save"
                 )
             }
         },
@@ -128,6 +129,7 @@ fun AddEditNoteScreen(
                 onFocusChange = {
                     viewModel.onEvent(AddEditNoteEvent.ChangeTitleFocus(it))
                 },
+                testTag = TestTags.TITLE_TEXT_FIELD,
                 isHintVisible = titleState.isHintVisible,
                 singleLine = true,
                 textStyle = MaterialTheme.typography.headlineMedium,
@@ -142,6 +144,7 @@ fun AddEditNoteScreen(
                 onFocusChange = {
                     viewModel.onEvent(AddEditNoteEvent.ChangeContentFocus(it))
                 },
+                testTag = TestTags.CONTENT_TEXT_FIELD,
                 isHintVisible = contentState.isHintVisible,
                 textStyle = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier.fillMaxHeight()
