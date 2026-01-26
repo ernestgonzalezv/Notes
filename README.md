@@ -1,7 +1,7 @@
 
 ---
 
-# **Clean Architecture Note App (2026 Edition)**
+# **Clean Architecture Note App **
 
 A modern, offline-first notes application built with **Jetpack Compose**, focusing on Clean Architecture principles, reactive state management, and a comprehensive automated testing suite.
 
@@ -10,7 +10,7 @@ A modern, offline-first notes application built with **Jetpack Compose**, focusi
 * **UI:** Jetpack Compose (Material 3)
 * **Architecture:** Clean Architecture + MVVM
 * **DI:** Koin 4.x (Modern & Lightweight)
-* **Database:** Room Persistence (Offline-first)
+* **Database:** Room Persistence 
 * **Concurrency:** Kotlin Coroutines & Flow
 * **Testing:** * **Unit:** MockK, Google Truth, JUnit 5
 * **UI/E2E:** Compose Test Rule, Koin Testing
@@ -23,7 +23,7 @@ A modern, offline-first notes application built with **Jetpack Compose**, focusi
 
 ```text
 com.egcoding.notes
-├── core                # Global utilities, navigation, and theme
+├── core                # Global utilities and navigation
 ├── di                  # Koin modules (AppModule, TestAppModule)
 ├── domain              # Business logic (Models, Repositories, Use Cases)
 └── presentation        # UI Screens, ViewModels, and State
