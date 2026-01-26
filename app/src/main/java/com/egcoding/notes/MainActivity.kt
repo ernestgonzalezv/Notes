@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import android.graphics.Color
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import com.egcoding.notes.core.navigation.NavigationStack
@@ -15,7 +16,7 @@ import com.egcoding.notes.core.navigation.Screen
 import com.ernestgonzalezv.cleanarchitecturenoteapp.ui.theme.NotesTheme
 
 class MainActivity : ComponentActivity() {
-
+    @ExperimentalAnimationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

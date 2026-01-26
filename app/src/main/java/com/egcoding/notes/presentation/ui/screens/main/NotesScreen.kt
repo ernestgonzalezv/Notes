@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.egcoding.notes.core.utils.TestTags
 import com.egcoding.notes.presentation.ui.components.NoteItem
 import com.egcoding.notes.presentation.ui.components.OrderSection
 import kotlinx.coroutines.launch
@@ -80,7 +81,8 @@ fun NotesScreen(
                 OrderSection(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(vertical = 16.dp),
+                        .padding(vertical = 16.dp)
+                        .testTag(TestTags.ORDER_SECTION),
                     noteOrder = state.noteOrder,
                     onOrderChange = {
                         viewModel.onEvent(NotesEvent.Order(it))

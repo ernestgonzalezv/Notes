@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.egcoding.notes"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -61,6 +61,8 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
     implementation(libs.koin.androidx.navigation)
+    implementation(libs.koin.test)
+    implementation(libs.koin.test.junit4)
 
     // --- Coroutines ---
     implementation(libs.kotlinx.coroutines.core)
@@ -77,6 +79,8 @@ dependencies {
     testImplementation(libs.google.truth)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.okhttp.mockwebserver)
+    testImplementation(libs.google.truth)
+    androidTestImplementation(libs.google.truth)
 
     // --- Instrumented Testing ---
     androidTestImplementation(libs.androidx.junit)
