@@ -1,4 +1,3 @@
-This README covers the entire project as of 2026, focusing on the **Clean Architecture** implementation, **Koin DI**, and the robust **Testing Suite** we just stabilized.
 
 ---
 
