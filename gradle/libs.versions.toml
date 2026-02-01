@@ -38,6 +38,9 @@ firebaseAnalytics = "23.0.0"
 crashlyticsPlugin = "3.0.6"
 firebaseBom = "34.8.0"
 
+#Logging
+timber = "5.0.1"
+
 [libraries]
 # AndroidX Core & Lifecycle
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -86,10 +89,14 @@ androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-te
 androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
 
-#Crashlytics
+#Firebase
 firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics", version.ref = "firebaseCrashlytics" }
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebaseAnalytics" }
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+
+#Logging
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -1,6 +1,7 @@
 package com.egcoding.notes
 
 import android.app.Application
+import com.egcoding.notes.di.analyticsModule
 import com.egcoding.notes.di.databaseModule
 import com.egcoding.notes.di.repositoryModule
 import com.egcoding.notes.di.useCaseModule
@@ -18,7 +19,8 @@ class NotesApp : Application() {
                 databaseModule,
                 repositoryModule,
                 useCaseModule,
-                viewModelModule
+                viewModelModule,
+                analyticsModule
             )
         }
         // Initialize Firebase Crashlytics

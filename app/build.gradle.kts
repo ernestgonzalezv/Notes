@@ -95,6 +95,7 @@ dependencies {
     // --- Debug tools ---
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+    implementation(libs.timber)
 
     // --- Firebase ---
     implementation(libs.firebase.crashlytics)
