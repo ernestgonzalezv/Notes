@@ -101,4 +101,7 @@ dependencies {
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.analytics)
     implementation(platform(libs.firebase.bom))
+
+    // --- Tag manager ---
+    implementation(libs.tag.manager)
 }
