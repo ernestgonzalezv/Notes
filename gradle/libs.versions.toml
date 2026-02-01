@@ -38,6 +38,9 @@ firebaseAnalytics = "23.0.0"
 crashlyticsPlugin = "3.0.6"
 firebaseBom = "34.8.0"
 
+#Tag manager
+tagManager = "18.3.0"
+
 #Logging
 timber = "5.0.1"
 
@@ -97,6 +100,8 @@ firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.r
 #Logging
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
 
+#Tag manager
+tag-manager = {group = "com.google.android.gms", name="play-services-tagmanager", version.ref = "tagManager"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
