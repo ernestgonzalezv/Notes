@@ -1,29 +1,39 @@
-# **Clean Architecture Note App (2026 Edition)**
+# **Clean Notes App (2026)**
 
-A modern, offline-first notes application built with **Jetpack Compose**, focusing on Clean Architecture principles, reactive state management, and a comprehensive automated testing suite with integrated monitoring.
+Modern **Jetpack Compose** application focused on **Clean Architecture**, offline-first persistence, and a decoupled observability engine.
 
-## Tech Stack
-
-* **UI:** Jetpack Compose (Material 3)
-* **Architecture:** Clean Architecture + MVVM
-* **DI:** Koin 4.x (Modern & Lightweight)
-* **Database:** Room Persistence (Offline-first)
-* **Concurrency:** Kotlin Coroutines & Flow
-* **Monitoring:**
-    * **Analytics:** Firebase Analytics (via Custom Provider Architecture)
-    * **Crash Reporting:** Firebase Crashlytics
-* **Testing:**
-    * **Unit:** MockK, Google Truth, JUnit 5
-    * **UI/E2E:** Compose Test Rule, Koin Testing
+## **Core Tech Stack**
+* **UI:** Jetpack Compose (Material 3) + UDF.
+* **Logic:** Clean Architecture + MVVM + Use Cases.
+* **DI:** Koin 4.x.
+* **Storage:** Room Persistence + Flow.
+* **Concurrency:** Kotlin Coroutines.
 
 ---
 
-## Project Structure
+## ** Analytics & Observability (Architecture Focus)**
+A provider-agnostic system designed for scalability and **Zero-Code updates**.
 
-```text
-com.egcoding.notes
-├── core                # Global utilities, navigation, and theme
-│   └── analytics       # Event tracking system & provider abstractions
-├── di                  # Koin modules (AppModule, TestAppModule)
-├── domain              # Business logic (Models, Repositories, Use Cases)
-└── presentation        # UI Screens, ViewModels, and State
+
+
+* **Google Tag Manager (GTM):** Implemented local container orchestration via `GTM-P64M48HJ.json`. Enables dynamic tag firing without app releases.
+* **Firebase Suite:** Type-safe **Analytics** via `Sealed Classes` and **Crashlytics** for real-time error monitoring.
+* **Event Hub Pattern:** Decoupled Facade (`AnalyticsTracker`) that broadcasts events to multiple providers simultaneously.
+* **Privacy-First:** Architecture-level support for GDPR/CCPA opt-out and data reset.
+
+---
+
+## ** Testing & Quality**
+* **Unit Tests:** MockK + Google Truth for business rules and Use Cases.
+* **E2E Tests:** Compose Testing Library covering primary user flows.
+* **Standardization:** Centralized dependency management via **Gradle Version Catalogs**.
+
+---
+
+## ** Key Features**
+* ✅ **Clean Architecture:** Strict separation of concerns (Domain, Data, Presentation).
+* ✅ **Real-time UX:** Reactive state management with Kotlin Flow.
+* ✅ **Scalable Monitoring:** GTM + Firebase integration for business intelligence.
+* ✅ **Offline-First:** Robust local data handling.
+
+---
