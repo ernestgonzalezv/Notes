@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "179465982620",
+    "project_id": "notesdev-fdba9",
+    "storage_bucket": "notesdev-fdba9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179465982620:android:30cba16238fce49c819359",
+        "android_client_info": {
+          "package_name": "com.egcoding.notes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAX76KLZMcQEA3x-yiH3jXbZvpS1W8BIEA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
