@@ -9,6 +9,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.egcoding.notes.core.analytics.AnalyticsTracker
 import com.egcoding.notes.core.navigation.Screen
 import com.egcoding.notes.domain.model.InvalidNoteException
 import com.egcoding.notes.domain.model.Note
@@ -18,6 +19,7 @@ import kotlinx.coroutines.launch
 
 class AddEditNoteViewModel(
     private val noteUseCases: NoteUseCases,
+    private val tracker: AnalyticsTracker,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -58,6 +60,7 @@ class AddEditNoteViewModel(
                 }
             }
         }
+        tracker.trackScreenView(screenName = Screen.AddEditNoteScreen.route)
     }
 
     fun onEvent(event: AddEditNoteEvent) {
@@ -84,6 +87,7 @@ class AddEditNoteViewModel(
             is AddEditNoteEvent.SaveNote -> {
                 viewModelScope.launch {
                     try {
+                        val isEditing = currentNoteId != null
                         noteUseCases.addNote(
                             Note(
                                 title = noteTitle.value.text,
@@ -93,11 +97,24 @@ class AddEditNoteViewModel(
                                 id = currentNoteId
                             )
                         )
+                        if (isEditing) {
+                            tracker.trackNoteEdited(
+                                color = noteColor.value,
+                                titleLength = noteTitle.value.text.length
+                            )
+                        } else {
+                            tracker.trackNoteCreated(
+                                color = noteColor.value,
+                                titleLength = noteTitle.value.text.length
+                            )
+                        }
                         _eventFlow.emit(UiEvent.SaveNote)
                     } catch(e: InvalidNoteException) {
+                        val fallbackError = "Couldn't save note"
+                        tracker.trackError(message = e.message?: fallbackError)
                         _eventFlow.emit(
                             UiEvent.ShowSnackbar(
-                                message = e.message ?: "Couldn't save note"
+                                message = e.message ?: fallbackError
                             )
                         )
                     }
